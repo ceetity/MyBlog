@@ -4,6 +4,8 @@
   后端： Java+SpringBoot+Redis+MySQL
   
   前端： vue3+Axios+Element Plus+JavaScript/ES6+ 
+
+
 登录验证，采用邮箱发送验证码
 ![image](https://github.com/user-attachments/assets/196a6f9b-ea8b-45f5-af76-c2324b67e402)
 主页展示
