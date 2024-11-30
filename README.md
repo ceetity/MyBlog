@@ -1,5 +1,5 @@
 # MyBlogJ
-技术栈：
+#技术栈：
   后端： Java+SpringBoot+Redis+MySQL
   前端： vue3+Axios+Element Plus+JavaScript/ES6+ 
 登录验证，采用邮箱发送验证码
