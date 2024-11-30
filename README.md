@@ -1,4 +1,4 @@
-# MyBlogJ
+# MyBlog 个人博客网站
 #技术栈：
   后端： Java+SpringBoot+Redis+MySQL
   前端： vue3+Axios+Element Plus+JavaScript/ES6+ 
