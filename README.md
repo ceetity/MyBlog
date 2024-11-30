@@ -7,7 +7,8 @@
 
 
 #登录验证，采用邮箱发送验证码
-![image](https://github.com/user-attachments/assets/196a6f9b-ea8b-45f5-af76-c2324b67e402
+![image](https://github.com/user-attachments/assets/ce8a34c8-6d76-4972-a817-5f251fd54839)
+
 
 #主页展示
 ![image](https://github.com/user-attachments/assets/461dbc1e-6c3a-479b-bcf2-3a0d1e1285a2)
