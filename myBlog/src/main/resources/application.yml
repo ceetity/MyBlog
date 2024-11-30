@@ -1,0 +1,38 @@
+# ?????
+server:
+  port: 8083  # ???????
+
+# Spring????
+spring:
+  # ?????
+  datasource:
+    url: jdbc:mysql://localhost:3306/blog?useSSL=false&serverTimezone=UTC
+    username: root  # 用户名
+    password: 123456  # 密码
+    driver-class-name: com.mysql.cj.jdbc.Driver  # MySQL配置
+
+  redis:   #redis配置
+    host: 192.168.88.130
+    port: 6379
+    password: 123456
+    lettuce:
+      pool:   #连接池配置
+        max-active: 10
+        max-idle: 10
+        min-idle: 1
+        time-between-eviction-runs: 10s
+  jackson:
+    default-property-inclusion: non_null # JSON处理时忽略非空字段
+
+
+# MyBatis-Plus??
+mybatis-plus:
+  type-aliases-package: com.example.blog.entity
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl  # ??????
+    map-underscore-to-camel-case: true
+  type-handlers-package: com.baomidou.mybatisplus.extension.handlers.JacksonTypeHandler
+  global-config:
+    db-config:
+      id-type: auto
+  mapper-locations: classpath*:/mapper/**/*.xml

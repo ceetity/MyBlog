@@ -1,0 +1,61 @@
+create table category
+(
+    id          bigint auto_increment comment '分类ID'
+        primary key,
+    name        varchar(50)                        not null comment '分类名称',
+    create_time datetime default CURRENT_TIMESTAMP null comment '创建时间',
+    constraint idx_name
+        unique (name) comment '分类名称唯一索引'
+)
+    comment '分类表' charset = utf8mb4;
+
+create table article
+(
+    id          bigint auto_increment comment '文章ID'
+        primary key,
+    title       varchar(255)                       not null comment '文章标题',
+    description text                               null comment '文章描述/摘要',
+    content     longtext                           null comment '文章内容',
+    category_id bigint                             null comment '分类ID',
+    views       int      default 0                 null comment '浏览量',
+    create_time datetime default CURRENT_TIMESTAMP null comment '创建时间',
+    update_time datetime default CURRENT_TIMESTAMP null on update CURRENT_TIMESTAMP comment '更新时间',
+    constraint fk_article_category
+        foreign key (category_id) references category (id)
+            on update cascade on delete set null
+)
+    comment '文章表' charset = utf8mb4;
+
+create index idx_category
+    on article (category_id)
+    comment '分类索引';
+
+create index idx_create_time
+    on article (create_time)
+    comment '创建时间索引';
+
+create table profile
+(
+    id          bigint auto_increment comment '个人信息ID'
+        primary key,
+    name        varchar(50)  not null comment '姓名',
+    title       varchar(100) null comment '职位头衔',
+    avatar      varchar(255) null comment '头像URL',
+    email       varchar(100) null comment '电子邮箱',
+    github      varchar(255) null comment 'GitHub链接',
+    skills      json         null comment '技能列表',
+    description text         null comment '个人简介'
+)
+    comment '个人信息表' charset = utf8mb4;
+
+create table user
+(
+    id          bigint(120) unsigned auto_increment
+        primary key,
+    email       varchar(50)                           not null,
+    password    varchar(16) default ''                null,
+    nick_name   varchar(50) default ''                null,
+    create_time timestamp   default CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP,
+    update_time timestamp   default CURRENT_TIMESTAMP not null
+);
+
